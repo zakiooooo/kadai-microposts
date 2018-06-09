@@ -11,6 +11,7 @@
             </div>
             <div>
                 <p>{!! nl2br(e($micropost->content)) !!}</p>
+                @include('favorite.favorite_button', ['user' => $user])
             </div>
             <div>
                 @if (Auth::user()->id == $micropost->user_id)
