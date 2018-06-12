@@ -11,14 +11,19 @@
             </div>
             <div>
                 <p>{!! nl2br(e($micropost->content)) !!}</p>
-                @include('favorite.favorite_button', ['user' => $user])
+                
             </div>
-            <div>
-                @if (Auth::user()->id == $micropost->user_id)
-                    {!! Form::open(['route' => ['microposts.destroy', $micropost->id], 'method' => 'delete']) !!}
-                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
-                    {!! Form::close() !!}
-                @endif
+            <div class="btn-toolbar" role="toolbar">
+                <div class="btn-group" role="group">
+                    @include('favorite.favorite_button', ['user' => $user])
+                </div>
+                <div class="btn-group" role="group">
+                    @if (Auth::user()->id == $micropost->user_id)
+                        {!! Form::open(['route' => ['microposts.destroy', $micropost->id], 'method' => 'delete']) !!}
+                            {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
+                        {!! Form::close() !!}
+                    @endif
+                </div>
             </div>
         </div>
     </li>
