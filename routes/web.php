@@ -1,6 +1,6 @@
 <?php
 
-/*
+/**
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'MicropostsController@index');
+Route::get('timeline', 'TimelineController@index')->name('timeline.get');
 
 // user registration
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');

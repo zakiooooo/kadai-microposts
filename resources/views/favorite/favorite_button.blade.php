@@ -1,4 +1,3 @@
-
 @if (Auth::user()->is_favorite($micropost->id))
     {!! Form::open(['route' => ['user.unfavorite', $micropost->id], 'method' => 'delete']) !!}
         {!! Form::submit('Unfavorite', ['class' => "btn btn-warning btn-xs"]) !!}
